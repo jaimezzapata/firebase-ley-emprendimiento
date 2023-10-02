@@ -1,12 +1,12 @@
-import Header from "../../helpers/Header"
+import Header from "../../helpers/Header";
 
 const ListadoUsuarios = () => {
   return (
     <section>
-        <Header />
-        Listado de Usuarios
+      <Header />
+      Listado de Usuarios
     </section>
-  )
-}
+  );
+};
 
-export default ListadoUsuarios
+export default ListadoUsuarios;
