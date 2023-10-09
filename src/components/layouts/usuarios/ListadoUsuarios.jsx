@@ -1,19 +1,23 @@
 import Header from "../../helpers/Header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { dataBase } from "../../config/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 
 const ListadoUsuarios = () => {
-  const [usuarios, setUsuarios] = useState()
+  const [usuarios, setUsuarios] = useState();
 
-  async function listarUsuarios(){
-   let usuariosCollection = collection(dataBase, 'usuarios')
-   let data = await getDocs(usuariosCollection)
-   console.log(usuariosCollection)
-   console.log(data)
+  async function listarUsuarios() {
+    let usuariosCollection = collection(dataBase, "usuarios");
+    let data = await getDocs(usuariosCollection);
+    console.log(usuariosCollection);
+    console.log(data.docs);
+    console.log(data.docs.map((doc) => doc.data()));
+    setUsuarios(data.docs.map((doc) => doc.data()));
   }
 
-  listarUsuarios()
+  useEffect(()=>{
+    listarUsuarios();
+  },[])
 
   return (
     <section className="users">
