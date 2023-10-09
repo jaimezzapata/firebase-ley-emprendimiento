@@ -13,7 +13,7 @@ const ListadoUsuarios = () => {
     console.log(data.docs);
     console.log(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     // console.log(data.docs.map((doc) => doc.data()));
-    setUsuarios(data.docs.map((doc) => doc.data()));
+    setUsuarios(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   }
 
   /* Spread operator 
@@ -28,8 +28,9 @@ const ListadoUsuarios = () => {
   // console.log(mezcla);
 
   const eliminarUsuario = async (id) => {
-   let usuarioEliminado = doc(dataBase, 'usuarios', id)
-   await deleteDoc(usuarioEliminado)
+    let usuarioEliminado = doc(dataBase, "usuarios", id);
+    await deleteDoc(usuarioEliminado);
+    listarUsuarios();
   };
 
   useEffect(() => {
@@ -43,12 +44,12 @@ const ListadoUsuarios = () => {
         <h1>Listado de usuarios</h1>
         <section className="cards-users">
           {usuarios.map((usuario) => (
-            <section className="card-user" key={usuario.contrasenaUsuario}>
+            <section className="card-user" key={usuario.id}>
               <h3>Contraseña: {usuario.contrasenaUsuario}</h3>
               <h3>Correo: {usuario.correoUsuario}</h3>
               <h3>Usuario: {usuario.nombreUsuario}</h3>
               <section className="acciones">
-                <button onClick={()=>eliminarUsuario()}>
+                <button onClick={() => eliminarUsuario(usuario.id)}>
                   <i className="fa-solid fa-trash"></i>
                 </button>
                 <button>
