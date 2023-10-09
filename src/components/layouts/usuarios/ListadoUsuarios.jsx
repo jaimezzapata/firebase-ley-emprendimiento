@@ -16,7 +16,7 @@ const ListadoUsuarios = () => {
   listarUsuarios()
 
   return (
-    <section>
+    <section className="users">
       <Header />
       Listado de Usuarios
     </section>

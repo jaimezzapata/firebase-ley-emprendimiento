@@ -2,7 +2,7 @@ import Header from "./Header"
 
 const Home = () => {
     return(
-        <section>
+        <section className="home">
             <Header />
         </section>
     )
