@@ -4,7 +4,7 @@ import { dataBase } from "../../config/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 
 const ListadoUsuarios = () => {
-  const [usuarios, setUsuarios] = useState();
+  const [usuarios, setUsuarios] = useState([]);
 
   async function listarUsuarios() {
     let usuariosCollection = collection(dataBase, "usuarios");
@@ -22,7 +22,20 @@ const ListadoUsuarios = () => {
   return (
     <section className="users">
       <Header />
-      Listado de Usuarios
+      <section className="cards">
+        <h1>Listado de usuarios</h1>
+        <section className="cards-users">
+          {
+            usuarios.map((usuario)=>(
+              <section className="card-user" key={usuario.contrasenaUsuario}>
+                <h3>Contraseña: {usuario.contrasenaUsuario}</h3>
+                <h3>Correo: {usuario.correoUsuario}</h3>
+                <h3>Usuario: {usuario.nombreUsuario}</h3>
+              </section>
+            ))
+          }
+        </section>
+      </section>
     </section>
   );
 };
