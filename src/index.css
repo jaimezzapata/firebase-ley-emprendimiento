@@ -83,3 +83,16 @@ header nav a:hover::before{
     flex-direction: column;
     padding: 2%;
 }
+
+.acciones{
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.acciones button{
+    width: 45%;
+    height: 30px;
+    cursor: pointer;
+}
