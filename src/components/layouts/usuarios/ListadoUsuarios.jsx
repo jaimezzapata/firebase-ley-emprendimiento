@@ -47,9 +47,9 @@ const ListadoUsuarios = () => {
         <section className="cards-users">
           {usuarios.map((usuario) => (
             <section className="card-user" key={usuario.id}>
-              <h3>Contraseña: {usuario.contrasenaUsuario}</h3>
-              <h3>Correo: {usuario.correoUsuario}</h3>
-              <h3>Usuario: {usuario.nombreUsuario}</h3>
+              <h3>Contraseña: {usuario.contrasena}</h3>
+              <h3>Correo: {usuario.correo}</h3>
+              <h3>Usuario: {usuario.nombre}</h3>
               <section className="acciones">
                 <button onClick={() => eliminarUsuario(usuario.id)}>
                   <i className="fa-solid fa-trash"></i>
