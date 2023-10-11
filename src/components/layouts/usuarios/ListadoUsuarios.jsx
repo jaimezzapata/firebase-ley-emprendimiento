@@ -2,6 +2,7 @@ import Header from "../../helpers/Header";
 import { useState, useEffect } from "react";
 import { dataBase } from "../../config/firebaseConfig";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const ListadoUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
@@ -42,6 +43,7 @@ const ListadoUsuarios = () => {
       <Header />
       <section className="cards">
         <h1>Listado de usuarios</h1>
+        <Link to="/crear"><i className="fa-solid fa-plus"></i></Link>
         <section className="cards-users">
           {usuarios.map((usuario) => (
             <section className="card-user" key={usuario.id}>
