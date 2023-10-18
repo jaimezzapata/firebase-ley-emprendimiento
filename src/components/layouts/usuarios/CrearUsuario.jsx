@@ -18,7 +18,7 @@ const CrearUsuario = () => {
   }
 
   return (
-    <divc className="usuarios">
+    <div className="usuarios">
       <Header />
       <section className="listado-usuarios">
         <form action="">
@@ -42,7 +42,7 @@ const CrearUsuario = () => {
           </button>
         </form>
       </section>
-    </divc>
+    </div>
   );
 };
 
