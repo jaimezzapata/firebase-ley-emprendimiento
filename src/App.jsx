@@ -2,6 +2,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Home from './components/helpers/Home'
 import ListadoUsuarios from './components/layouts/usuarios/ListadoUsuarios'
 import CrearUsuario from './components/layouts/usuarios/CrearUsuario'
+import EditarUsuario from './components/layouts/usuarios/EditarUsuario'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
     path: '/crear',
     element: <CrearUsuario />
   },
+  {
+    path: '/actualizar/:id',
+    element: <EditarUsuario />
+  }
 ])
 
 function App() {

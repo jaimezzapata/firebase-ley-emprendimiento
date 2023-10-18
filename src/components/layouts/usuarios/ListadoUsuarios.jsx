@@ -55,7 +55,7 @@ const ListadoUsuarios = () => {
                   <i className="fa-solid fa-trash"></i>
                 </button>
                 <button>
-                  <i className="fa-solid fa-pencil"></i>
+                  <Link to={'/actualizar/'+usuario.id}><i className="fa-solid fa-pencil"></i></Link>
                 </button>
               </section>
             </section>
