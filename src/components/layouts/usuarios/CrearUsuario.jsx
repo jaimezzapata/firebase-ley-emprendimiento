@@ -18,9 +18,9 @@ const CrearUsuario = () => {
   }
 
   return (
-    <div>
+    <divc className="usuarios">
       <Header />
-      <section>
+      <section className="listado-usuarios">
         <form action="">
           <input
             onChange={(e) => setNombre(e.target.value)}
@@ -42,7 +42,7 @@ const CrearUsuario = () => {
           </button>
         </form>
       </section>
-    </div>
+    </divc>
   );
 };
 
