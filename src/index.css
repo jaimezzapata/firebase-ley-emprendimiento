@@ -121,19 +121,19 @@ header nav a:hover::before {
   flex-direction: column;
   gap: 10px;
 }
-.listado-usuarios form input{
-    width: 40%;
-    height: 30px;
-    outline: none;
+.listado-usuarios form input {
+  width: 40%;
+  height: 30px;
+  outline: none;
 }
 
-.listado-usuarios form button{
-    width: 10%;
-    height: 30px;
-    cursor: pointer;
-    background-color: black;
-    border: 1px solid rgb(52, 52, 52);
+.listado-usuarios form button {
+  width: 10%;
+  height: 30px;
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid rgb(52, 52, 52);
 }
-.listado-usuarios form button i{
-    color: white;
+.listado-usuarios form button i {
+  color: white;
 }
